@@ -1,21 +1,20 @@
-import { getMovieDetails } from "@/api/tmdb";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { TiArrowBackOutline } from "react-icons/ti";
+import { getMovieDetails } from "@/api/tmdb";
 
-type pageProps = {
-  params: {
-    id: string;
-  };
+type PageProps = {
+  params: Promise<{ id: string }>;
 };
 
-export default async function Page({ params }: pageProps) {
+export default async function Page({ params }: PageProps) {
   const { id } = await params;
   const movie = await getMovieDetails(id);
+
   if (!movie) {
     return <div>Movie not found</div>;
   }
+
   return (
     <div className="container relative mt-6 mb-6 mx-auto p-4 flex flex-col md:flex-row items-center gap-6 border border-white/20 backdrop-blur-md shadow-lg text-white rounded-lg">
       <Link
