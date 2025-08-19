@@ -7,7 +7,7 @@ export default function GoBackBtn() {
   return (
     <button
       onClick={() => router.back()}
-      className="absolute right-4 top-4 text-white hover:text-red-400 hover:scale-110 transition-transform duration-300 sm:right-1 sm:top-1"
+      className="absolute flex flex-col items-center justify-center gap-0  right-1 top-1 sm:right-4 sm:top-4 text-white hover:text-red-400 hover:scale-110 transition-transform duration-300"
     >
       <TiArrowBackOutline className="text-2xl md:text-3xl" />
     </button>

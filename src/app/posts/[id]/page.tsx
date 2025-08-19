@@ -10,7 +10,6 @@ export default async function Page({ params }: PageProps) {
     throw new Error("Article not found");
   }
   const post = await res.json();
-  console.log(post);
   return (
     <div className="container relative mt-6 mb-6 mx-auto p-4 flex flex-col items-center gap-6 border border-white/20 backdrop-blur-md shadow-lg text-white rounded-lg">
       <GoBackBtn />

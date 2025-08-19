@@ -11,35 +11,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/movies/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/movies/loading.js"
-    ],
-    "/movies/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/movies/page.js"
-    ],
-    "/movies/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/movies/[id]/page.js"
-    ],
-    "/about/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/about/page.js"
-    ],
     "/posts/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/posts/page.js"
-    ],
-    "/movies/[id]/error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/movies/[id]/error.js"
     ],
     "/posts/[id]/error": [
       "static/chunks/webpack.js",
@@ -51,10 +26,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/posts/[id]/page.js"
     ],
-    "/posts/[...slag]/page": [
+    "/movies/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/posts/[...slag]/page.js"
+      "static/chunks/app/movies/loading.js"
+    ],
+    "/movies/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/movies/page.js"
+    ],
+    "/movies/[id]/error": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/movies/[id]/error.js"
+    ],
+    "/movies/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/movies/[id]/page.js"
     ]
   }
 }

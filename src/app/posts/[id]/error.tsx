@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { BsFilePostFill } from "react-icons/bs";
+import { BsFillFileEarmarkRichtextFill } from "react-icons/bs";
 import { FaArrowLeft } from "react-icons/fa";
 
 export default function Error() {
   return (
     <div className="container max-w-[50rem] mt-6 mb-6 mx-auto p-8 flex flex-col items-center gap-6 border border-white/20 backdrop-blur-md shadow-lg text-white rounded-lg">
-      <BsFilePostFill className="text-red-500 text-6xl mb-4 animate-bounce" />
+      <BsFillFileEarmarkRichtextFill className="text-red-500 text-6xl mb-4 animate-bounce" />
 
       <h1 className="text-3xl md:text-4xl font-bold mb-2">
         Упс... Пост не знайдено
