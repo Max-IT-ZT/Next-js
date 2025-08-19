@@ -3,6 +3,15 @@ import { getTrendingMovies, Movie } from "@/api/tmdb";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "MaxDev",
+  description: "Сторінка з фільмами, що демонструє найпопулярніші фільми.",
+  openGraph: {
+    title: "MaxDev - Сторінка з фільмами",
+    description: "Сторінка з фільмами, що демонструє найпопулярніші фільми.",
+    images: ["/img/movies.png"],
+  },
+};
 export default async function MoviesPage() {
   const data: { results: Movie[] } = await getTrendingMovies();
   return (
@@ -11,7 +20,7 @@ export default async function MoviesPage() {
         Trending Movies
       </h1>
       <ul className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center ">
-        {data.results.map((movie: Movie) => (
+        {data.results.splice(0, 10).map((movie: Movie) => (
           <Link key={movie.id} href={`/movies/${movie.id}`}>
             <li className="flex flex-col items-center gap-2  min-h-[400px] p-3 border border-white/20 backdrop-blur-md shadow-lg text-white rounded-lg hover:scale-105 transition-transform duration-300">
               <Image

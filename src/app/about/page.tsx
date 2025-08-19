@@ -1,14 +1,13 @@
 import React from "react";
 export const metadata = {
-  title: "Про нас – Мій сайт",
+  title: "MaxDev",
   description: "Детальна інформація про нашу команду",
   openGraph: {
-    title: "Про нас – Мій сайт",
+    title: "MaxDev - Про нас",
     description: "Детальна інформація про нашу команду",
-    images: ["/img/pre.png"],
+    images: ["/img/about.png"],
   },
 };
-// export interface PageProps {}
 
 export default function Page() {
   return <div>Hello</div>;
