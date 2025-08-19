@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: PageProps) {
     description: movie.overview ? movie.overview.slice(0, 100) : "",
     openGraph: {
       title: movie.title,
-      description: movie.overview ? movie.overview.slice(0, 100) : "",
+      description: movie.overview ? movie.overview.slice(0, 200) : "",
       images: [`https://image.tmdb.org/t/p/w500${movie.poster_path}`],
     },
   };
@@ -48,11 +48,11 @@ export default async function Page({ params }: PageProps) {
           {movie.overview}
         </p>
         <p className="text-sm sm:text-base">
-          Дата релізу:{" "}
+          Дата релізу:
           <span className="font-bold text-red-600">{movie.release_date}</span>
         </p>
         <p className="text-sm sm:text-base">
-          Рейтинг:{" "}
+          Рейтинг:
           <span className="text-yellow-500 font-bold">
             {movie.vote_average.toFixed(1)}
           </span>

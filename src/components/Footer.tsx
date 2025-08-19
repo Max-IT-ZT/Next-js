@@ -13,6 +13,7 @@ export default function Footer() {
           >
             <Image
               src="/img/MaxDev.png"
+              priority={false}
               alt="Logo"
               width={60}
               height={60}
