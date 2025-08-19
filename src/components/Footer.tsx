@@ -5,7 +5,6 @@ export default function Footer() {
   return (
     <footer className="backdrop-blur-md border-t border-white/20 shadow-lg text-white p-2">
       <div className="max-w-10/12 mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        {/* Logo */}
         <div className="flex items-center gap-2">
           <a
             href="https://maxdev.site"
@@ -21,7 +20,6 @@ export default function Footer() {
             />
           </a>
         </div>
-        {/* Контакти */}
         <div className="text-sm text-gray-300">
           <div className="text-center">
             Email:{" "}
@@ -40,7 +38,6 @@ export default function Footer() {
             MIT.
           </div>
         </div>
-        {/* Соц мережі */}
         <div className="flex gap-3">
           <a
             href="https://facebook.com"
@@ -65,7 +62,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             aria-label="Instagram"
           >
-            <RiInstagramFill className="w-6 h-6 fill-current hover:text-pink-500" />
+            <RiInstagramFill className="w-6 h-6 fill-current hover:text-pink-500 " />
           </a>
         </div>
       </div>
