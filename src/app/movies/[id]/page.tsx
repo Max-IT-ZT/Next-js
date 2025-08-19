@@ -4,7 +4,9 @@ import Link from "next/link";
 import React from "react";
 import { TiArrowBackOutline } from "react-icons/ti";
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: { params: { id: number } }) {
+  console.log("params: ", params.id);
+
   const movie = await getMovieDetails(params.id);
   if (!movie) {
     return <div>Movie not found</div>;

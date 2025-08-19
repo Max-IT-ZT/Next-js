@@ -18,7 +18,7 @@ export async function getTrendingMovies() {
 
   return res.json();
 }
-export async function getMovieDetails(movieId: string) {
+export async function getMovieDetails(movieId: number) {
   const res = await fetch(
     `${API_URL}/movie/${movieId}?language=uk-UA`,
     options
