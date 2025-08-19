@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://next-js-azure-gamma.vercel.app/"),
   title: "MaxDev",
   description:
     "Головна сторінка, візуалізує різні можливості як клієнських компонентів так і серверних.",

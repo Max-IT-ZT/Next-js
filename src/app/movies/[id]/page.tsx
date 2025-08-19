@@ -6,6 +6,21 @@ type PageProps = {
   params: Promise<{ id: string }>;
 };
 
+export async function generateMetadata({ params }: PageProps) {
+  const { id } = await params;
+  const movie = await getMovieDetails(id);
+
+  return {
+    title: movie.title,
+    description: movie.overview ? movie.overview.slice(0, 100) : "",
+    openGraph: {
+      title: movie.title,
+      description: movie.overview ? movie.overview.slice(0, 100) : "",
+      images: [`https://image.tmdb.org/t/p/w500${movie.poster_path}`],
+    },
+  };
+}
+
 export default async function Page({ params }: PageProps) {
   const { id } = await params;
   const movie = await getMovieDetails(id);
@@ -20,6 +35,7 @@ export default async function Page({ params }: PageProps) {
       <Image
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
+        priority={false}
         width={300}
         height={450}
         className="rounded-lg shadow-lg object-cover w-full max-w-[250px] sm:max-w-[300px]"
