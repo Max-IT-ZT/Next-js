@@ -13,11 +13,11 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/img/Logo2.png"
+              src="/img/MaxDev.png"
               alt="Logo"
               width={60}
               height={60}
-              className=" bg-white rounded-b-full"
+              className=""
             />
           </a>
         </div>
