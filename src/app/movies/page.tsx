@@ -1,18 +1,10 @@
 // app/movies/page.tsx
-import { getTrendingMovies } from "@/api/tmdb";
+import { getTrendingMovies, Movie } from "@/api/tmdb";
 import Image from "next/image";
 import Link from "next/link";
-interface Movies {
-  id: number;
-  title: string;
-  overview: string;
-  poster_path: string;
-  release_date: string;
-  backdrop_path?: string;
-}
 
 export default async function MoviesPage() {
-  const data: { results: Movies[] } = await getTrendingMovies();
+  const data: { results: Movie[] } = await getTrendingMovies();
 
   return (
     <div className="container px-4 py-8 mx-auto ">
@@ -20,7 +12,7 @@ export default async function MoviesPage() {
         Trending Movies
       </h1>
       <ul className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
-        {data.results.map((movie: Movies) => (
+        {data.results.map((movie: Movie) => (
           <Link key={movie.id} href={`/movies/${movie.id}`}>
             <li className="flex flex-col items-center gap-2  min-h-[400px] p-3 border border-white/20 backdrop-blur-md shadow-lg text-white rounded-lg hover:scale-105 transition-transform duration-300">
               <Image
