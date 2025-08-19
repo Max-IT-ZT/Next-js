@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
-import { TiArrowBackOutline } from "react-icons/ti";
 import { getMovieDetails } from "@/api/tmdb";
+import GoBackBtn from "@/components/GoBackBtn";
 
 type PageProps = {
   params: Promise<{ id: string }>;
@@ -17,12 +16,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <div className="container relative mt-6 mb-6 mx-auto p-4 flex flex-col md:flex-row items-center gap-6 border border-white/20 backdrop-blur-md shadow-lg text-white rounded-lg">
-      <Link
-        href={`/movies`}
-        className="absolute right-4 top-4 text-white hover:text-red-400 hover:scale-110 transition-transform duration-300"
-      >
-        <TiArrowBackOutline className="text-2xl md:text-3xl" />
-      </Link>
+      <GoBackBtn />
       <Image
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
