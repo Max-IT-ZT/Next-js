@@ -12,6 +12,10 @@ export default function Navbar() {
     { href: "/posts", label: "Пости" },
     { href: "/about", label: "Про нас" },
     { href: "/movies", label: "Фільми", prefetch: true },
+    { href: "/dashboard", label: "Дошка" },
+    { href: "/login", label: "Увійти" },
+    { href: "/variant-a", label: "Варіант A" },
+    { href: "/variant-b", label: "Варіант B" },
   ];
 
   return (
