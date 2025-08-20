@@ -3,7 +3,7 @@ import React from "react";
 export default function Page() {
   return (
     <div className="flex justify-center items-center min-h-screen ">
-      <form className="flex flex-col gap-4 p-8 border-b border-white/20 backdrop-blur-md shadow-lg min-w-[320px] shadow-md text-white">
+      <form className="flex flex-col gap-4 p-8 border-b border-white/20 backdrop-blur-md shadow-lg min-w-[320px]  text-white">
         <h2 className="text-center text-2xl font-semibold">Вхід</h2>
         <label className="flex flex-col gap-1">
           Email
