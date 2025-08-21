@@ -13,7 +13,11 @@ type Post = {
   published_at?: string;
 };
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string[] };
+}) {
   const [id] = params.slug;
   const post: Post = await fetch(`https://dev.to/api/articles/${id}`).then(
     (res) => res.json()
