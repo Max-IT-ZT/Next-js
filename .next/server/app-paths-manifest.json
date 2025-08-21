@@ -1,7 +1,7 @@
 {
   "/posts/[...slug]/page": "app/posts/[...slug]/page.js",
-  "/movies/page": "app/movies/page.js",
+  "/login/page": "app/login/page.js",
   "/variant-a/page": "app/variant-a/page.js",
-  "/page": "app/page.js",
-  "/login/page": "app/login/page.js"
+  "/movies/page": "app/movies/page.js",
+  "/page": "app/page.js"
 }

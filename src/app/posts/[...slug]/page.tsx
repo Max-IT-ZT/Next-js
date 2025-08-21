@@ -2,7 +2,7 @@ import GoBackBtn from "@/components/GoBackBtn";
 import React from "react";
 
 type PageProps = {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 };
 
 type Post = {
@@ -13,11 +13,12 @@ type Post = {
   published_at?: string;
 };
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string[] };
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ slug: string[] }>;
+  }
+) {
+  const params = await props.params;
   const [id] = params.slug;
   const post: Post = await fetch(`https://dev.to/api/articles/${id}`).then(
     (res) => res.json()
@@ -33,7 +34,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: PageProps) {
+export default async function Page(props: PageProps) {
+  const params = await props.params;
   const [id, ...rest] = params.slug;
   const res = await fetch(`https://dev.to/api/articles/${id}`);
   if (!res.ok) throw new Error("Article not found");
