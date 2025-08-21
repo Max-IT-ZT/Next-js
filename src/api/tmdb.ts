@@ -14,6 +14,7 @@ const options = {
   },
   next: { revalidate: 3600 },
 };
+
 export async function getTrendingMovies(): Promise<{ results: Movie[] }> {
   const res = await fetch(
     `${API_URL}/trending/movie/week?language=uk-UA`,

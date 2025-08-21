@@ -25,11 +25,11 @@ export default async function MoviesPage() {
             <li className="flex flex-col items-center gap-2  min-h-[400px] p-3 border border-white/20 backdrop-blur-md shadow-lg text-white rounded-lg hover:scale-105 transition-transform duration-300">
               <Image
                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                priority={false}
+                priority={true}
                 alt={movie.title}
                 width={250}
                 height={325}
-                className="w-[250px] h-[325px] object-cover rounded-lg"
+                className="object-cover rounded-lg"
               />
               <h2 className="text-center text-sm font-medium line-clamp-2">
                 {movie.title}

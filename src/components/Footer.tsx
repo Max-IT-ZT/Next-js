@@ -13,11 +13,10 @@ export default function Footer() {
           >
             <Image
               src="/img/MaxDev.png"
-              priority={false}
+              priority
               alt="Logo"
               width={60}
               height={60}
-              className=""
             />
           </a>
         </div>

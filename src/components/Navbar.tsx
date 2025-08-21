@@ -23,7 +23,7 @@ export default function Navbar() {
       <a href="https://maxdev.site" target="_blank" rel="noopener noreferrer">
         <Image
           src="/img/MaxDev.png"
-          priority={false}
+          priority
           alt="Logo"
           width={50}
           height={50}

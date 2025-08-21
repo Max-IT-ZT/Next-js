@@ -16,7 +16,7 @@ export default async function Page() {
       <ul className="mt-6">
         {posts.map((post: { id: string; title: string }) => (
           <li key={post.id} className="border-b border-gray-700 py-4">
-            <Link href={`/posts/${post.id}`}>
+            <Link href={`/posts/${post.id}/${post.title.replace(/\s+/g, "-")}`}>
               <h2 className="text-2xl font-semibold">{post.title}</h2>
             </Link>
           </li>
