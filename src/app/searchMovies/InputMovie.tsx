@@ -10,6 +10,7 @@ export default function InputMovie({ initialQuery }: { initialQuery: string }) {
     e.preventDefault();
 
     router.push(`/searchMovies?query=${encodeURIComponent(value)}`);
+    setValue("");
   };
 
   return (
