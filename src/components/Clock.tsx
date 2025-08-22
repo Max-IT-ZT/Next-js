@@ -13,11 +13,11 @@ export default function Clock() {
 
   return (
     <div
-      className="text-gray-200 text-7xl font-extrabold tracking-widest 
-               drop-shadow-md 
-               bg-black/60 p-8 rounded-2xl border border-cyan-500/20 w-xl
-               text-center uppercase
-                "
+      className="text-gray-200 text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-widest 
+           drop-shadow-md 
+           bg-black/60 p-4 sm:p-6 md:p-8 rounded-2xl border border-cyan-500/20 w-full max-w-xl
+           text-center uppercase
+          "
     >
       {time}
     </div>
