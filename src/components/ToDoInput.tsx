@@ -23,7 +23,7 @@ export default function ToDoInput({ onAdd }: TodoInputProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col sm:flex-row gap-2 w-full"
+      className="flex flex-col sm:flex-row gap-2 w-full "
     >
       <input
         type="text"
@@ -31,7 +31,7 @@ export default function ToDoInput({ onAdd }: TodoInputProps) {
         value={value}
         onChange={onChange}
         placeholder="Введи задачу..."
-        className="flex-1 px-3 py-2 border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto"
+        className="flex-1 px-3 py-2 border border-white/20 backdrop-blur-md shadow-lg text-white rounded-lg  focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto"
       />
       <button
         type="submit"

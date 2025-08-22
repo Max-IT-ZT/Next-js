@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { getMovieDetails } from "@/api/tmdb";
+import { getMovieDetails, getMovieVideo } from "@/api/tmdb";
 import GoBackBtn from "@/components/GoBackBtn";
+import ModalPlayer from "@/components/TrailerButton";
 
 type PageProps = {
   params: Promise<{ id: string }>;
@@ -24,6 +25,12 @@ export async function generateMetadata({ params }: PageProps) {
 export default async function Page({ params }: PageProps) {
   const { id } = await params;
   const movie = await getMovieDetails(id);
+  const videoData = await getMovieVideo(id);
+
+  const trailer = videoData.results.find(
+    (v) => v.type === "Trailer" && v.site === "YouTube"
+  );
+  const videoKey = trailer?.key || null;
 
   if (!movie) {
     return <div>Movie not found</div>;
@@ -57,6 +64,7 @@ export default async function Page({ params }: PageProps) {
             {movie.vote_average.toFixed(1)}
           </span>
         </p>
+        <ModalPlayer videoKey={videoKey} />
       </div>
     </div>
   );

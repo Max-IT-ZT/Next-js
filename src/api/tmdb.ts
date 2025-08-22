@@ -7,6 +7,17 @@ export type Movie = {
   release_date: string;
   vote_average: number;
 };
+type Video = {
+  id: string;
+  key: string;
+  name: string;
+  site: string;
+  type: string;
+};
+export type MovieVideoResponse = {
+  id: number;
+  results: Video[];
+};
 
 const options = {
   headers: {
@@ -45,5 +56,16 @@ export async function getMovieDetails(movieId: string): Promise<Movie> {
   if (!res.ok) {
     throw new Error("Failed to fetch movie details");
   }
+  return res.json();
+}
+
+export async function getMovieVideo(
+  movieId: string
+): Promise<MovieVideoResponse> {
+  const res = await fetch(
+    `${API_URL}/movie/${movieId}/videos?language=uk-UA`,
+    options
+  );
+  if (!res.ok) throw new Error("Failed to fetch movie videos");
   return res.json();
 }

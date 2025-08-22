@@ -14,7 +14,7 @@ export default async function Page({
 
   return (
     <div className="container px-4 py-8 mx-auto relative">
-      <h1 className="text-4xl font-bold text-center mask-linear-from-2.5 text-grey m-8 ">
+      <h1 className="text-4xl font-bold text-center mask-linear-from-2.5 text-white m-8 ">
         Пошук фільмів
       </h1>
       <InputMovie initialQuery={query ?? ""} />

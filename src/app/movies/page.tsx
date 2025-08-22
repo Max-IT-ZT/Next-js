@@ -16,7 +16,7 @@ export default async function MoviesPage() {
   const data: { results: Movie[] } = await getTrendingMovies();
   return (
     <div className="container px-4 py-8 mx-auto relative">
-      <h1 className="text-4xl font-bold text-center mask-linear-from-2.5 text-grey m-8 ">
+      <h1 className="text-4xl font-bold text-center mask-linear-from-2.5 text-white m-8 ">
         Trending Movies
       </h1>
       <ul className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center ">
