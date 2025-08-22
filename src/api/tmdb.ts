@@ -1,4 +1,5 @@
 const API_URL = "https://api.themoviedb.org/3";
+
 export type Movie = {
   id: number;
   title: string;
@@ -17,6 +18,12 @@ type Video = {
 export type MovieVideoResponse = {
   id: number;
   results: Video[];
+};
+type MoviesResponse = {
+  page: number;
+  total_pages: number;
+  total_results: number;
+  results: Movie[];
 };
 
 const options = {
@@ -37,9 +44,11 @@ export async function searchMovies(
   }
   return res.json();
 }
-export async function getTrendingMovies(): Promise<{ results: Movie[] }> {
+export async function getTrendingMovies(
+  page: number = 1
+): Promise<MoviesResponse> {
   const res = await fetch(
-    `${API_URL}/trending/movie/week?language=uk-UA`,
+    `${API_URL}/trending/movie/week?language=uk-UA&page=${page}`,
     options
   );
   if (!res.ok) {

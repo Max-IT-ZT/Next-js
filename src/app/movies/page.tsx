@@ -2,7 +2,12 @@
 import { getTrendingMovies, Movie } from "@/api/tmdb";
 import Image from "next/image";
 import Link from "next/link";
+import AddMovies from "./AddMovies";
 
+type Data = {
+  total_pages: number;
+  results: Movie[];
+};
 export const metadata = {
   title: "MaxDev",
   description: "Сторінка з фільмами, що демонструє найпопулярніші фільми.",
@@ -12,8 +17,14 @@ export const metadata = {
     images: ["/img/movies.png"],
   },
 };
-export default async function MoviesPage() {
-  const data: { results: Movie[] } = await getTrendingMovies();
+export default async function MoviesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: number }>;
+}) {
+  const { page } = await searchParams;
+  const data: Data = await getTrendingMovies(page);
+  console.log("data: ", data);
   return (
     <div className="container px-4 py-8 mx-auto relative">
       <h1 className="text-4xl font-bold text-center mask-linear-from-2.5 text-white m-8 ">
@@ -38,6 +49,7 @@ export default async function MoviesPage() {
           </Link>
         ))}
       </ul>
+      <AddMovies data={data} />
     </div>
   );
 }
