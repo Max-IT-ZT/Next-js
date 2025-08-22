@@ -14,7 +14,18 @@ const options = {
   },
   next: { revalidate: 3600 },
 };
-
+export async function searchMovies(
+  query: string
+): Promise<{ results: Movie[] }> {
+  const res = await fetch(
+    `${API_URL}/search/movie?include_adult=false&language=uk-UA&page=1&query=${query}`,
+    options
+  );
+  if (!res.ok) {
+    throw new Error("Failed to fetch trending movies");
+  }
+  return res.json();
+}
 export async function getTrendingMovies(): Promise<{ results: Movie[] }> {
   const res = await fetch(
     `${API_URL}/trending/movie/week?language=uk-UA`,

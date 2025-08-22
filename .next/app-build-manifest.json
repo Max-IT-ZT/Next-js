@@ -11,10 +11,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/posts/page": [
+    "/searchMovies/error": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/posts/page.js"
+      "static/chunks/app/searchMovies/error.js"
+    ],
+    "/searchMovies/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/searchMovies/loading.js"
+    ],
+    "/searchMovies/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/searchMovies/page.js"
     ],
     "/movies/loading": [
       "static/chunks/webpack.js",
@@ -26,30 +36,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/movies/page.js"
     ],
-    "/posts/[...slug]/error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/posts/[...slug]/error.js"
-    ],
-    "/posts/[...slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/posts/[...slug]/page.js"
-    ],
     "/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/login/page.js"
-    ],
-    "/variant-a/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/variant-a/page.js"
-    ],
-    "/variant-b/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/variant-b/page.js"
     ]
   }
 }

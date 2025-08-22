@@ -1,7 +1,6 @@
 {
-  "/posts/[...slug]/page": "app/posts/[...slug]/page.js",
   "/login/page": "app/login/page.js",
-  "/variant-a/page": "app/variant-a/page.js",
-  "/movies/page": "app/movies/page.js",
-  "/page": "app/page.js"
+  "/searchMovies/page": "app/searchMovies/page.js",
+  "/page": "app/page.js",
+  "/movies/page": "app/movies/page.js"
 }
