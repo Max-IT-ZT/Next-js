@@ -9,7 +9,6 @@ type Data = {
   results: Movie[];
 };
 export const metadata = {
-  metadataBase: new URL("https://next-js-azure-gamma.vercel.app/movies"),
   title: "MaxDev",
   description: "Сторінка з фільмами, що демонструє найпопулярніші фільми.",
   openGraph: {
