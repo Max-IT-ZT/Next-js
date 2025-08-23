@@ -14,7 +14,6 @@ export default function AddMovies({
 }) {
   const [page, setPage] = useState(1);
   const router = useRouter();
-  console.log(page);
   return (
     <div className="mt-6 flex justify-center items-center gap-4">
       <button

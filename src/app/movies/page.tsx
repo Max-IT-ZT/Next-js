@@ -9,12 +9,13 @@ type Data = {
   results: Movie[];
 };
 export const metadata = {
+  metadataBase: new URL("https://next-js-azure-gamma.vercel.app/movies"),
   title: "MaxDev",
   description: "Сторінка з фільмами, що демонструє найпопулярніші фільми.",
   openGraph: {
     title: "MaxDev - Сторінка з фільмами",
     description: "Сторінка з фільмами, що демонструє найпопулярніші фільми.",
-    images: ["/img/movies.png"],
+    images: ["/img/films.png"],
   },
 };
 export default async function MoviesPage({
@@ -24,7 +25,6 @@ export default async function MoviesPage({
 }) {
   const { page } = await searchParams;
   const data: Data = await getTrendingMovies(page);
-  console.log("data: ", data);
   return (
     <div className="container px-4 py-8 mx-auto relative">
       <h1 className="text-4xl font-bold text-center mask-linear-from-2.5 text-white m-8 ">
@@ -40,7 +40,7 @@ export default async function MoviesPage({
                 alt={movie.title}
                 width={250}
                 height={325}
-                className="object-cover rounded-lg"
+                className="object-cover  rounded-lg"
               />
               <h2 className="text-center text-sm font-medium line-clamp-2">
                 {movie.title}
