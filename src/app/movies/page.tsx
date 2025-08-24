@@ -14,7 +14,7 @@ export const metadata = {
   openGraph: {
     title: "MaxDev - Сторінка з фільмами",
     description: "Сторінка з фільмами, що демонструє найпопулярніші фільми.",
-    images: ["/img/films.png"],
+    images: ["/img/films.webp"],
   },
 };
 export default async function MoviesPage({

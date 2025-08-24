@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "MaxDev - Головна сторінка",
     description:
       "Головна сторінка, візуалізує різні можливості як клієнських компонентів так і серверних.",
-    images: ["/img/home.png"],
+    images: ["/img/home.webp"],
   },
 };
 
