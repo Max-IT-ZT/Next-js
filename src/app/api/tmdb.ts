@@ -5,7 +5,7 @@ export type Movie = {
   title: string;
   overview: string;
   poster_path: string | null;
-  release_date: string;
+  release_date?: string;
   vote_average: number;
   backdrop_path?: string;
 };
@@ -29,7 +29,7 @@ type MoviesResponse = {
 
 const options = {
   headers: {
-    Authorization: `Bearer ${process.env.TMDB_TOKEN}`,
+    Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZjBmOGM0MGQyYjNiMDE2MDRiMGU1NmRhYmFmYzMyNCIsIm5iZiI6MTcyMDY0MzQwNi40MjUsInN1YiI6IjY2OGVlZjRlMzk1MjJkMTg3MzAzMzZlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.CgsJ_XjzoM1e1ZhBo5Hef8lXf8qQfhj6P5uCgmLL2Rw`,
   },
   next: { revalidate: 3600 },
 };
