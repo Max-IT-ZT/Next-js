@@ -1,6 +1,6 @@
 "use client";
 
-import { Movie } from "@/api/tmdb";
+import { Movie } from "@/app/api/tmdb";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 

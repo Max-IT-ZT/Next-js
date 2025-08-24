@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getMovieDetails, getMovieVideo } from "@/api/tmdb";
+import { getMovieDetails, getMovieVideo } from "@/app/api/tmdb";
 import GoBackBtn from "@/components/GoBackBtn";
 import ModalPlayer from "@/components/TrailerButton";
 
@@ -37,7 +37,16 @@ export default async function Page({ params }: PageProps) {
   }
 
   return (
-    <div className="container relative mt-6 mb-6 mx-auto p-4 flex flex-col md:flex-row items-center gap-6 border border-white/20 backdrop-blur-md shadow-lg text-white rounded-lg">
+    <div className="relative container mt-6 mb-6 mx-auto p-4 flex flex-col md:flex-row items-center gap-6 border border-white/20 backdrop-blur-md shadow-lg text-white rounded-lg overflow-hidden">
+      <div
+        className="absolute inset-0 z-[-2]"
+        style={{
+          backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie.backdrop_path}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <div className="absolute inset-0 bg-black/50 z-[-1]"></div>
       <GoBackBtn />
       <Image
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -47,7 +56,7 @@ export default async function Page({ params }: PageProps) {
         height={450}
         className="rounded-lg shadow-lg object-cover w-full max-w-[250px] sm:max-w-[300px]"
       />
-      <div className="flex flex-col justify-center gap-4 text-center md:text-left">
+      <div className="relative flex flex-col justify-center gap-4 text-center md:text-left">
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">
           {movie.title}
         </h1>
@@ -55,11 +64,11 @@ export default async function Page({ params }: PageProps) {
           {movie.overview}
         </p>
         <p className="text-sm sm:text-base">
-          Дата релізу:
+          Дата релізу:{" "}
           <span className="font-bold text-red-600">{movie.release_date}</span>
         </p>
         <p className="text-sm sm:text-base">
-          Рейтинг:
+          Рейтинг:{" "}
           <span className="text-yellow-500 font-bold">
             {movie.vote_average.toFixed(1)}
           </span>
