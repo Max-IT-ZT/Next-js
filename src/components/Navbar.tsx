@@ -15,9 +15,10 @@ export default function Navbar() {
     { href: "/", label: "Головна" },
     { href: "/posts", label: "Пости" },
     { href: "/movies", label: "Фільми" },
+    { href: "/searchMovies", label: "Пошук фільмів" },
     { href: "/dashboard", label: "Дошка" },
     { href: "/login", label: "Увійти" },
-    { href: "/searchMovies", label: "Пошук фільмів" },
+    { href: "/contact", label: "Контакти" },
   ];
 
   return (

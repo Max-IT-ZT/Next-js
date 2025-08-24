@@ -1,6 +1,6 @@
 @import "tailwindcss";
 body {
-  background-image: url(/img/bg-dark2.png);
+  background-image: url(/img/bg-dark2.webp);
   background-size: contain;
   background-repeat: repeat;
   background-position: center;
