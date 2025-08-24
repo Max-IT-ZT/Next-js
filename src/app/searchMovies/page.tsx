@@ -1,4 +1,4 @@
-import { getTrendingMovies, Movie, searchMovies } from "@/api/tmdb";
+import { getTrendingMovies, Movie, searchMovies } from "@/app/api/tmdb";
 import InputMovie from "./InputMovie";
 import Image from "next/image";
 import Link from "next/link";

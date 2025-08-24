@@ -1,5 +1,5 @@
 // app/movies/page.tsx
-import { getTrendingMovies, Movie } from "@/api/tmdb";
+import { getTrendingMovies, Movie } from "@/app/api/tmdb";
 import Image from "next/image";
 import Link from "next/link";
 import AddMovies from "./AddMovies";
@@ -24,8 +24,9 @@ export default async function MoviesPage({
 }) {
   const { page } = await searchParams;
   const data: Data = await getTrendingMovies(page);
+  console.log("data: ", data);
   return (
-    <div className="container px-4 py-8 mx-auto relative">
+    <div className="container px-4 py-8 mx-auto relative ">
       <h1 className="text-4xl font-bold text-center mask-linear-from-2.5 text-white m-8 ">
         Trending Movies
       </h1>
