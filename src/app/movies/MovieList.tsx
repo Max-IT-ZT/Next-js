@@ -4,17 +4,17 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { TfiReload } from "react-icons/tfi";
+import { TbLoaderQuarter } from "react-icons/tb";
 
 export default function MoviesList() {
   const [movies, setMovies] = useState<Movie[]>([]);
-  console.log("movies: ", movies);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchMovies = async () => {
       const data = await getTrendingMovies(page);
-      console.log("data: ", data);
       setMovies((prev) => {
         const merged = [...prev, ...data.results];
         const uniqueMovies = Array.from(
@@ -62,9 +62,12 @@ export default function MoviesList() {
             <button
               onClick={() => setPage(page + 1)}
               disabled={page >= (totalPages ?? 1)}
-              className="px-7 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition duration-200 shadow disabled:opacity-50"
+              className="px-6 py-2 rounded-lg border border-white/20 backdrop-blur-md text-white font-semibold  transition duration-200 shadow disabled:opacity-50"
             >
-              Завантажити ще
+              <div className="flex flex-col items-center gap-6">
+                <TbLoaderQuarter className="animate-spin w-[50px] h-[50px]" />
+                <p>Завантажити ще</p>
+              </div>
             </button>
           </div>
         )}
