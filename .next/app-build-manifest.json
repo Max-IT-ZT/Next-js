@@ -6,6 +6,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
     "/movies/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -16,15 +21,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/movies/page.js"
     ],
-    "/movies/[id]/error": [
+    "/searchMovies/error": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/movies/[id]/error.js"
+      "static/chunks/app/searchMovies/error.js"
     ],
-    "/movies/[id]/page": [
+    "/searchMovies/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/movies/[id]/page.js"
+      "static/chunks/app/searchMovies/loading.js"
+    ],
+    "/searchMovies/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/searchMovies/page.js"
     ]
   }
 }
