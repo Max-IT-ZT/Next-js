@@ -462,6 +462,9 @@
   .h-\[175px\] {
     height: 175px;
   }
+  .h-\[225px\] {
+    height: 225px;
+  }
   .h-screen {
     height: 100vh;
   }
@@ -579,6 +582,9 @@
   .flex-wrap {
     flex-wrap: wrap;
   }
+  .items-baseline {
+    align-items: baseline;
+  }
   .items-center {
     align-items: center;
   }
@@ -587,6 +593,9 @@
   }
   .justify-center {
     justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
   }
   .justify-items-center {
     justify-items: center;
@@ -648,6 +657,9 @@
   }
   .overflow-x-scroll {
     overflow-x: scroll;
+  }
+  .scroll-auto {
+    scroll-behavior: auto;
   }
   .rounded {
     border-radius: 0.25rem;
@@ -839,6 +851,9 @@
   .px-7 {
     padding-inline: calc(var(--spacing) * 7);
   }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
@@ -865,6 +880,12 @@
   }
   .text-center {
     text-align: center;
+  }
+  .text-end {
+    text-align: end;
+  }
+  .text-start {
+    text-align: start;
   }
   .font-sans {
     font-family: var(--font-sans);
@@ -1240,6 +1261,12 @@
     @media (width >= 40rem) {
       font-size: var(--text-2xl);
       line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .sm\:text-4xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
   }
   .sm\:text-6xl {
