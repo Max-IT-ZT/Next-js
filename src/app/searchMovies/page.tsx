@@ -21,7 +21,7 @@ export default async function Page({
       <InputMovie initialQuery={query ?? ""} />
 
       {data.results.length > 0 && (
-        <ul className="flex flex-wrap gap-4 py-2 px-2">
+        <ul className="flex flex-wrap items-center justify-center gap-4 py-2 px-2">
           {data.results.map((movie) => (
             <Link key={movie.id} href={`/movies/${movie.id}`}>
               <li className="min-h-[275px]  sm:min-h-[350px] flex-shrink-0 p-3 border border-white/20 backdrop-blur-md shadow-lg text-white rounded-lg hover:scale-105 transition-transform duration-300">
@@ -34,8 +34,8 @@ export default async function Page({
                     className="object-cover rounded-lg"
                   />
                 </div>
-                <div className="flex text-center items-center flex-col gap-1 justify-between mt-2 text-sm">
-                  <p className="text-center font-bold max-w-[100px] sm:max-w[200px] text-ellipsis overflow-hidden line-clamp-2">
+                <div className="flex text-end items-baseline flex-col gap-1 justify-between mt-2 text-sm">
+                  <p className="text-start font-bold max-w-[100px] sm:max-w[200px] text-ellipsis overflow-hidden line-clamp-2">
                     {movie.title}
                   </p>
                   <p className="flex items-center justify-center gap-1 font-bold">
