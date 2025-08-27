@@ -12,7 +12,6 @@ export default function PopularList() {
     const fetchRatedMovies = async () => {
       setLoading(true);
       const data = await getTrendingMovies(page);
-      console.log("dataTrending: ", data);
       setMovies((prevMovies) => [...prevMovies, ...data.results]);
       setTotalPage(data.total_pages);
       setLoading(false);

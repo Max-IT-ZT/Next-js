@@ -13,7 +13,6 @@ export default function RatedList() {
     const fetchRatedMovies = async () => {
       setLoading(true);
       const data = await getPopularMovies(page);
-      console.log("dataPopular: ", data);
       setMovies((prev) => [...prev, ...data.results]);
       setTotalPage(data.total_pages);
       setLoading(false);
@@ -26,15 +25,13 @@ export default function RatedList() {
       <h1 className="text-xl sm:text-4xl font-bold text-center text-white m-8">
         Рейтингові фільми
       </h1>
-      <div className="flex">
-        <MoviesList
-          movies={movies}
-          loading={loading}
-          page={page}
-          totalPage={totalPage}
-          setPage={setPage}
-        />
-      </div>
+      <MoviesList
+        movies={movies}
+        loading={loading}
+        page={page}
+        totalPage={totalPage}
+        setPage={setPage}
+      />
     </div>
   );
 }

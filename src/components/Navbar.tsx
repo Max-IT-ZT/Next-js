@@ -29,6 +29,7 @@ export default function Navbar() {
           alt="Logo"
           width={50}
           height={50}
+          className="w-auto h-auto"
         />
       </a>
       <ul className="hidden lg:flex space-x-4">

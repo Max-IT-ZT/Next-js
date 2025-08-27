@@ -8,23 +8,26 @@ export default function InputMovie({ initialQuery }: { initialQuery: string }) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
+    if (!value.trim()) return;
     router.push(`/searchMovies?query=${encodeURIComponent(value)}`);
     setValue("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-4 flex items-center gap-2">
+    <form
+      onSubmit={handleSubmit}
+      className="mb-6 flex w-full max-w-lg mx-auto gap-2"
+    >
       <input
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Введи назву фільму"
-        className="w-full px-4 py-2 rounded-lg border border-white/20 backdrop-blur-md  text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 shadow-sm"
+        className="w-full px-5 py-3 rounded-xl border border-white/20 backdrop-blur-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all shadow-lg"
       />
       <button
         type="submit"
-        className="px-5 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition duration-200 shadow"
+        className="px-6 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold shadow-lg transition-all"
       >
         Пошук
       </button>

@@ -13,7 +13,6 @@ export default function NowCinemaList() {
     const fetchRatedMovies = async () => {
       setLoading(true);
       const data = await getNowCinemaMovies(page);
-      console.log("dataNowCinema: ", data);
       setMovies((prevMovies) => [...prevMovies, ...data.results]);
       setTotalPage(data.total_pages);
       setLoading(false);

@@ -17,6 +17,7 @@ export default function Footer() {
               alt="Logo"
               width={60}
               height={60}
+              className="w-auto h-auto"
             />
           </a>
         </div>
