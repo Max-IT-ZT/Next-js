@@ -5,7 +5,7 @@ import MoviesList from "./MoviesList";
 
 export default function NowCinemaList() {
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [page, setPage] = useState(200);
+  const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
