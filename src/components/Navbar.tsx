@@ -13,9 +13,7 @@ export default function Navbar() {
 
   const links = [
     { href: "/", label: "Головна" },
-    { href: "/posts", label: "Пости" },
     { href: "/movies", label: "Фільми" },
-    { href: "/game", label: "Ігри" },
     { href: "/searchMovies", label: "Пошук фільмів" },
     { href: "/dashboard", label: "Дошка" },
     { href: "/login", label: "Увійти" },
@@ -26,12 +24,11 @@ export default function Navbar() {
     <nav className="relative z-50 flex items-center justify-between px-7 py-2 border-b border-white/20 backdrop-blur-md shadow-lg text-white">
       <a href="https://maxdev.site" target="_blank" rel="noopener noreferrer">
         <Image
-          src="/img/MaxDev.png"
+          src="/img/logoMaxDev.webp"
           priority
           alt="Logo"
           width={50}
           height={50}
-          className="mr-10"
         />
       </a>
       <ul className="hidden lg:flex space-x-4">

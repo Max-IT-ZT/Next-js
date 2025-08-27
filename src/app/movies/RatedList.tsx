@@ -7,21 +7,22 @@ export default function RatedList() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
-  const [loading, setLoading] = useState(true); // додали стан завантаження
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchRatedMovies = async () => {
-      setLoading(true); // починаємо завантаження
+      setLoading(true);
       const data = await getPopularMovies(page);
+      console.log("dataPopular: ", data);
       setMovies((prev) => [...prev, ...data.results]);
       setTotalPage(data.total_pages);
-      setLoading(false); // завершили завантаження
+      setLoading(false);
     };
     fetchRatedMovies();
   }, [page]);
 
   return (
-    <div className="container px-4 py-1 mx-auto relative">
+    <div className="max-w-[100%] px-4 py-1 mx-auto relative">
       <h1 className="text-xl sm:text-4xl font-bold text-center text-white m-8">
         Рейтингові фільми
       </h1>

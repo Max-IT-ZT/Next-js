@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   const { email, password } = await req.json();
 
-  if (email === "test@example.com" && password === "123456") {
+  if (email === "test@example.com" && password === "Comfy321") {
     const res = NextResponse.json({ message: "Login success!" });
 
     res.cookies.set("token", "FAKE_TOKEN_123", {
