@@ -21,7 +21,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="relative z-50 flex items-center justify-between px-7 py-2 border-b border-white/20 backdrop-blur-md shadow-lg text-white">
+    <nav className="relative z-50 flex items-center justify-between px-7 py-2 border-b border-white/20 backdrop-blur-md  shadow-lg text-white">
       <a href="https://maxdev.site" target="_blank" rel="noopener noreferrer">
         <Image
           src="/img/logoMaxDev.webp"
