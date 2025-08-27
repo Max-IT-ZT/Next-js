@@ -1,0 +1,19 @@
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url(/img/bg-dark2.webp);
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
