@@ -55,7 +55,7 @@ export default function MoviesList({
                     }
                     priority
                     sizes="(max-width: 640px) 300px, (max-width: 768px) 450px, 600px"
-                    alt={movie.title}
+                    alt={movie.title }
                     fill
                     className="object-cover rounded-lg"
                   />

@@ -48,6 +48,7 @@ export default function InputMovie({ initialQuery }: { initialQuery: string }) {
     if (!value.trim()) return;
     router.push(`/searchMovies?query=${encodeURIComponent(value)}`);
     setSuggestions([]);
+    setValue("");
   };
 
   return (
@@ -87,6 +88,7 @@ export default function InputMovie({ initialQuery }: { initialQuery: string }) {
                 onClick={() => {
                   setValue(movie.title);
                   setSuggestions([]);
+                  setValue("");
                   router.push(
                     `/searchMovies?query=${encodeURIComponent(movie.title)}`
                   );
