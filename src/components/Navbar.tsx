@@ -24,7 +24,7 @@ export default function Navbar() {
     <nav className="relative z-50 flex items-center justify-between px-7 py-2 border-b border-white/20 backdrop-blur-md  shadow-lg text-white">
       <a href="https://maxdev.site" target="_blank" rel="noopener noreferrer">
         <Image
-          src="/img/logoMaxDevX.webp"
+          src="/img/logoMaxDev.webp"
           priority
           alt="Logo"
           width={50}
