@@ -12,7 +12,7 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/img/logoMaxDev.webp"
+              src="/img/logo.webp"
               priority
               alt="Logo"
               width={60}
