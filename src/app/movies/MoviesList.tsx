@@ -55,7 +55,7 @@ export default function MoviesList({
                     }
                     priority
                     sizes="(max-width: 640px) 300px, (max-width: 768px) 450px, 600px"
-                    alt={movie.title }
+                    alt={movie.title}
                     fill
                     className="object-cover rounded-lg"
                   />
@@ -75,15 +75,13 @@ export default function MoviesList({
                 </div>
               </Link>
             ))}
-
-        {/* Кнопка "Завантажити ще" */}
         {movies.length > 0 && (
           <motion.button
             onClick={() => setPage(page + 1)}
             disabled={page >= totalPage}
             whileHover={{ scale: 1.05, boxShadow: "0 0 20px #ff007c" }}
             whileTap={{ scale: 0.95 }}
-            className="flex-shrink-0 w-[150px] sm:w-[180px] h-[225px] flex flex-col justify-center items-center rounded-lg border border-white/20 backdrop-blur-md text-white font-semibold transition-all duration-200 shadow disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-shrink-0 h-[225px] w-[150px] sm:w-[180px]  sm:h-[270px] flex flex-col justify-center items-center rounded-lg border border-white/20 backdrop-blur-md text-white font-semibold transition-all duration-200 shadow disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {page >= totalPage ? (
               <>

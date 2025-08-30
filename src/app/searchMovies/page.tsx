@@ -13,7 +13,6 @@ export default async function SearchPage({
   const data: { results: Movie[] } = query
     ? await searchMovies(query)
     : await getTrendingMovies();
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white px-4 sm:px-8 py-8">
       <h1 className="text-4xl sm:text-5xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-pink-500 mb-6">

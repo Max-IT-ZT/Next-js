@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 export default function HeroSlider({ movies }: { movies: Movie[] }) {
   const [index, setIndex] = useState(0);
@@ -11,11 +12,20 @@ export default function HeroSlider({ movies }: { movies: Movie[] }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % movies.length);
-    }, 5000); // авто переключення кожні 5 сек
+    }, 5000);
     return () => clearInterval(interval);
   }, [movies.length]);
 
   const movie = movies[index];
+
+  // Функції для перемикання слайдів вручну
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 1) % movies.length);
+  };
+
+  const prevSlide = () => {
+    setIndex((prev) => (prev - 1 + movies.length) % movies.length);
+  };
 
   return (
     <section className="relative h-[80vh] overflow-hidden">
@@ -35,7 +45,7 @@ export default function HeroSlider({ movies }: { movies: Movie[] }) {
             priority
             className="object-cover opacity-50"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#090e1a] via-[#090e1a]/40 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -74,12 +84,26 @@ export default function HeroSlider({ movies }: { movies: Movie[] }) {
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`w-3 h-3 rounded-full transition ${
+            className={`w-3 h-3 rounded-full transition transform duration-300 ${
               i === index ? "bg-red-600 scale-110" : "bg-gray-500"
             }`}
           />
         ))}
       </div>
+
+      {/* Стрілочки для перемикання */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-8 top-[94%] transform -translate-y-1/2 text-white text-3xl rounded-full p-3 z-50 transition-all duration-300 shadow-lg hover:bg-gray-700 hover:scale-110"
+      >
+        <GrLinkPrevious className="font-bold text-xl sm:text-3xl text-white hover:text-red-500 transition" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-8 top-[94%] transform -translate-y-1/2 text-white text-3xl rounded-full p-3 z-50 transition-all duration-300 shadow-lg hover:bg-gray-700 hover:scale-110"
+      >
+        <GrLinkNext className="font-bold text-xl sm:text-3xl text-white hover:text-red-500 transition" />
+      </button>
     </section>
   );
 }
