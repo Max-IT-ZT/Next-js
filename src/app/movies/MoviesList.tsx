@@ -13,7 +13,6 @@ interface MoviesListProps {
   page: number;
   totalPage: number;
   setPage: (page: number) => void;
-  sectionTitle?: string;
 }
 
 export default function MoviesList({
@@ -22,16 +21,9 @@ export default function MoviesList({
   page,
   totalPage,
   setPage,
-  sectionTitle,
 }: MoviesListProps) {
   return (
     <section className="my-8">
-      {sectionTitle && (
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 px-4">
-          {sectionTitle}
-        </h2>
-      )}
-
       <div className="flex gap-4 overflow-x-scroll scrollbar-hide px-4 py-2">
         {loading && movies.length === 0
           ? Array.from({ length: 6 }).map((_, i) => (
