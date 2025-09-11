@@ -1,4 +1,4 @@
-import { getNegativeNumbers } from "./getNegativeNumbers";
+import { getNegativeNumbers } from "../getNegativeNumbers";
 
 describe("Функція getNegativeNumbers", () => {
   it("Повертає числа які менші за 0", () => {

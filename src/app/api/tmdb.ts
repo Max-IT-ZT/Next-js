@@ -44,7 +44,7 @@ export async function searchMovies(
     options
   );
   if (!res.ok) {
-    throw new Error("Failed to fetch trending movies");
+    throw new Error("Failed to fetch search movies");
   }
   return res.json();
 }

@@ -8,8 +8,9 @@ export default function InputMovie({ initialQuery }: { initialQuery: string }) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!value.trim()) return;
-    router.push(`/searchMovies?query=${encodeURIComponent(value)}`);
+    const trimmedValue = value.trim();
+    if (!trimmedValue) return;
+    router.push(`/searchMovies?query=${encodeURIComponent(trimmedValue)}`);
     setValue("");
   };
 

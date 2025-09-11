@@ -1,4 +1,4 @@
-import { getEvenNumbers } from "./getEvenNumbers";
+import { getEvenNumbers } from "../getEvenNumbers";
 
 describe("Функція getEvenNumbers", () => {
   it("Повертає тільки парні числа", () => {

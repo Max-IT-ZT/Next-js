@@ -1,4 +1,4 @@
-import { multiply } from "./multiply";
+import { multiply } from "../multiply";
 
 describe("Функція множення двох чисел", () => {
   it("Помножити звичайні числа", () => {

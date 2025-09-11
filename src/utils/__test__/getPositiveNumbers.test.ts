@@ -1,4 +1,4 @@
-import { getPositiveNumbers } from "./getPositiveNumbers";
+import { getPositiveNumbers } from "../getPositiveNumbers";
 
 describe("Функція getPositiveNumbers", () => {
   it("Повертає числа які більші за 0", () => {

@@ -1,4 +1,4 @@
-import { getOddNumbers } from "./getOddNumbers";
+import { getOddNumbers } from "../getOddNumbers";
 
 describe("Функція getOddNumbers", () => {
   it("Повертає тільки не парні числа", () => {
