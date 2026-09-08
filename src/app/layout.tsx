@@ -17,18 +17,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://next-js-azure-gamma.vercel.app/"),
-  title: "MaxDev",
+  title: "MaxDev Movies",
   manifest: "/manifest.json",
   icons: {
     icon: "/icons/icon-192x192.png",
     apple: "/icons/apple-touch-icon.png",
   },
-  description:
-    "Головна сторінка, візуалізує різні можливості як клієнських компонентів так і серверних.",
+  description: "Каталог фільмів, пошук і детальна інформація про кіно.",
   openGraph: {
-    title: "MaxDev - Головна сторінка",
-    description:
-      "Головна сторінка, візуалізує різні можливості як клієнських компонентів так і серверних.",
+    title: "MaxDev Movies",
+    description: "Каталог фільмів, пошук і детальна інформація про кіно.",
     images: ["/img/home.webp"],
   },
 };

@@ -7,9 +7,11 @@ import HeroSlider from "@/components/HeroSlider";
 import MoviesRow from "@/components/MoviesRow";
 
 export default async function HomePage() {
-  const trending = await getTrendingMovies(1);
-  const popular = await getPopularMovies(1);
-  const nowPlaying = await getNowCinemaMovies(1);
+  const [trending, popular, nowPlaying] = await Promise.all([
+    getTrendingMovies(1),
+    getPopularMovies(1),
+    getNowCinemaMovies(1),
+  ]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">

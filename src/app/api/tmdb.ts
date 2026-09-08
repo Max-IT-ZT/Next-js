@@ -20,28 +20,28 @@ export type MovieVideoResponse = {
   id: number;
   results: Video[];
 };
-type MoviesResponse = {
+export type MoviesResponse = {
   page: number;
   total_pages: number;
   total_results: number;
   results: Movie[];
 };
 
-// const TMDB_TOKEN = process.env.TMDB_TOKEN;
+const TMDB_TOKEN = process.env.TMDB_TOKEN;
 
 const options = {
   headers: {
-    Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZjBmOGM0MGQyYjNiMDE2MDRiMGU1NmRhYmFmYzMyNCIsIm5iZiI6MTcyMDY0MzQwNi40MjUsInN1YiI6IjY2OGVlZjRlMzk1MjJkMTg3MzAzMzZlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.CgsJ_XjzoM1e1ZhBo5Hef8lXf8qQfhj6P5uCgmLL2Rw`,
+    Authorization: `Bearer ${TMDB_TOKEN ?? ""}`,
   },
   next: { revalidate: 3600 },
 };
 export async function searchMovies(
   query: string,
-  language: string = "uk-UA"
+  language: string = "uk-UA",
 ): Promise<{ results: Movie[] }> {
   const res = await fetch(
-    `${API_URL}/search/movie?include_adult=false&language=${language}&page=1&query=${query}`,
-    options
+    `${API_URL}/search/movie?include_adult=false&language=${language}&page=1&query=${encodeURIComponent(query)}`,
+    options,
   );
   if (!res.ok) {
     throw new Error("Failed to fetch search movies");
@@ -49,11 +49,11 @@ export async function searchMovies(
   return res.json();
 }
 export async function getTrendingMovies(
-  page: number = 1
+  page: number = 1,
 ): Promise<MoviesResponse> {
   const res = await fetch(
     `${API_URL}/trending/movie/week?language=uk-UA&page=${page}`,
-    options
+    options,
   );
   if (!res.ok) {
     throw new Error("Failed to fetch trending movies");
@@ -61,24 +61,24 @@ export async function getTrendingMovies(
   return res.json();
 }
 export async function getPopularMovies(
-  page: number = 1
+  page: number = 1,
 ): Promise<MoviesResponse> {
   const res = await fetch(
     `${API_URL}/movie/top_rated?language=uk-UA&page=${page}`,
-    options
+    options,
   );
   if (!res.ok) {
-    throw new Error("Failed to fetch popular movies");
+    throw new Error("Failed to fetch movies currently in cinemas");
   }
   return res.json();
 }
 
 export async function getNowCinemaMovies(
-  page: number = 1
+  page: number = 1,
 ): Promise<MoviesResponse> {
   const res = await fetch(
     `${API_URL}/movie/now_playing?language=uk-UA&page=${page}`,
-    options
+    options,
   );
   if (!res.ok) {
     throw new Error("Failed to fetch popular movies");
@@ -102,11 +102,11 @@ export async function getMovieDetails(movieId: string): Promise<Movie> {
 }
 
 export async function getMovieVideo(
-  movieId: string
+  movieId: string,
 ): Promise<MovieVideoResponse> {
   let res = await fetch(
     `${API_URL}/movie/${movieId}/videos?language=uk-UA`,
-    options
+    options,
   );
   if (!res.ok) throw new Error("Failed to fetch movie videos");
   let data: MovieVideoResponse = await res.json();
@@ -114,7 +114,7 @@ export async function getMovieVideo(
   if (!data.results || data.results.length === 0) {
     res = await fetch(
       `${API_URL}/movie/${movieId}/videos?language=en-US`,
-      options
+      options,
     );
     if (!res.ok)
       throw new Error("Failed to fetch movie videos in fallback language");

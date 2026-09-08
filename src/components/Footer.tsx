@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-10/12 mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <a
-            href="https://maxdev.site"
+            href="https://portfolio-max-dev.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
           >

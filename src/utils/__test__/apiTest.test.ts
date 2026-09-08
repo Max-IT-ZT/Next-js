@@ -48,13 +48,13 @@ describe("searchMovieApi - з vi.mock", () => {
       } as Response);
       const result = await searchMovies("Аватар");
       expect(mockFetch).toHaveBeenCalledWith(
-        "https://api.themoviedb.org/3/search/movie?include_adult=false&language=uk-UA&page=1&query=Аватар",
+        "https://api.themoviedb.org/3/search/movie?include_adult=false&language=uk-UA&page=1&query=%D0%90%D0%B2%D0%B0%D1%82%D0%B0%D1%80",
         {
           headers: {
             Authorization: expect.stringContaining("Bearer"),
           },
           next: { revalidate: 3600 },
-        }
+        },
       );
       expect(result.results).toEqual(mockMovies);
       expect(result.results).toHaveLength(2);
@@ -75,7 +75,7 @@ describe("searchMovieApi - з vi.mock", () => {
         status: 404,
       } as Response);
       await expect(searchMovies("лофрофолів")).rejects.toThrow(
-        "Failed to fetch search movies"
+        "Failed to fetch search movies",
       );
     });
     it("Повнинно шукати з мовою за замовчуванням", async () => {
@@ -86,7 +86,7 @@ describe("searchMovieApi - з vi.mock", () => {
       await searchMovies("тест");
       expect(mockFetch).toHaveBeenCalledWith(
         expect.stringContaining("uk-UA"),
-        expect.any(Object)
+        expect.any(Object),
       );
     });
     it("Повнинно шукати з переданою мовою", async () => {
@@ -97,7 +97,7 @@ describe("searchMovieApi - з vi.mock", () => {
       await searchMovies("тест", "en-US");
       expect(mockFetch).toHaveBeenCalledWith(
         expect.stringContaining("en-US"),
-        expect.any(Object)
+        expect.any(Object),
       );
     });
   });
@@ -115,7 +115,7 @@ describe("searchMovieApi - з vi.mock", () => {
             Authorization: expect.stringContaining("Bearer"),
           },
           next: { revalidate: 3600 },
-        }
+        },
       );
       expect(result.results).toEqual(mockMovies);
       expect(result.page).toBe(1);
@@ -131,7 +131,7 @@ describe("searchMovieApi - з vi.mock", () => {
 
       expect(mockFetch).toHaveBeenCalledWith(
         expect.stringContaining("page=1"),
-        expect.any(Object)
+        expect.any(Object),
       );
     });
     it("Успішно обробляє помилку запиту", async () => {
@@ -140,7 +140,7 @@ describe("searchMovieApi - з vi.mock", () => {
         status: 404,
       } as Response);
       await expect(getTrendingMovies(-1)).rejects.toThrow(
-        "Failed to fetch trending movies"
+        "Failed to fetch trending movies",
       );
     });
     it("обробляє помилки мережі", async () => {
@@ -157,7 +157,7 @@ describe("searchMovieApi - з vi.mock", () => {
       const result = await getTrendingMovies(2);
       expect(mockFetch).toHaveBeenCalledWith(
         expect.stringContaining("page=2"),
-        expect.any(Object)
+        expect.any(Object),
       );
       expect(mockFetch).toBeCalledTimes(1);
       expect(result.results).toEqual(mockMovies);
