@@ -1,5 +1,5 @@
 "use client";
-import { getTrendingMovies, Movie } from "@/app/api/tmdb";
+import { fetchMovies, Movie } from "@/lib/moviesClient";
 import { useEffect, useState } from "react";
 import MoviesList from "./MoviesList";
 
@@ -8,13 +8,19 @@ export default function PopularList() {
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   useEffect(() => {
     const fetchRatedMovies = async () => {
       setLoading(true);
-      const data = await getTrendingMovies(page);
-      setMovies((prevMovies) => [...prevMovies, ...data.results]);
-      setTotalPage(data.total_pages);
-      setLoading(false);
+      try {
+        const data = await fetchMovies("trending", page);
+        setMovies((prevMovies) => [...prevMovies, ...data.results]);
+        setTotalPage(data.total_pages);
+      } catch {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchRatedMovies();
   }, [page]);
@@ -32,6 +38,11 @@ export default function PopularList() {
         totalPage={totalPage}
         setPage={setPage}
       />
+      {error && (
+        <p className="text-center text-red-300">
+          Не вдалося завантажити популярні фільми.
+        </p>
+      )}
     </div>
   );
 }

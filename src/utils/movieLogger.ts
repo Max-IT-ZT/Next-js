@@ -7,7 +7,7 @@ function sendToConsole(message: string) {
 export function logMovieAction(
   action: string,
   movieTitle: string,
-  userId?: string
+  userId?: string,
 ): string {
   const timestamp = new Date().toISOString();
   const userInfo = userId ? ` by user ${userId}` : "";
@@ -42,10 +42,9 @@ export function saveFavoriteMovie(movieTitle: string, userId: string): string {
 
 function saveToStorage(key: string, value: string): boolean {
   try {
-
     console.log(`Saving ${key}: ${value}`);
     return Math.random() > 0.1; // 90% успішності
-  } catch (error) {
+  } catch {
     return false;
   }
 }

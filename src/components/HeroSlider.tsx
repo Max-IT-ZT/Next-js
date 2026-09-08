@@ -10,11 +10,15 @@ export default function HeroSlider({ movies }: { movies: Movie[] }) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    if (movies.length === 0) return;
+
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % movies.length);
     }, 5000);
     return () => clearInterval(interval);
   }, [movies.length]);
+
+  if (movies.length === 0) return null;
 
   const movie = movies[index];
 

@@ -15,14 +15,15 @@ export default function Navbar() {
     { href: "/", label: "Головна" },
     { href: "/movies", label: "Фільми" },
     { href: "/searchMovies", label: "Пошук фільмів" },
-    { href: "/dashboard", label: "Дошка" },
-    { href: "/login", label: "Увійти" },
-    { href: "/contact", label: "Контакти" },
   ];
 
   return (
     <nav className="relative z-50 flex items-center justify-between px-7 py-2 border-b border-white/20 backdrop-blur-md  shadow-lg text-white">
-      <a href="https://maxdev.site" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://portfolio-max-dev.vercel.app"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Image
           src="/img/logo.webp"
           priority
